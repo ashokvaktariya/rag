@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Canopy Brand Colors */
+    --canopy-teal: 199 65% 20%;        /* #113b52 */
+    --canopy-carbon: 330 9% 16%;       /* #2b2529 */
+    --canopy-leather: 28 61% 49%;      /* #cd8130 */
+    --canopy-tan: 28 41% 88%;          /* #e9d9d0 */
+    
+    /* Semantic tokens based on Canopy brand */
+    --background: 0 0% 100%;
+    --foreground: 330 9% 16%;          /* canopy-carbon */
+
+    --card: 0 0% 100%;
+    --card-foreground: 330 9% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 330 9% 16%;
+
+    --primary: 199 65% 20%;            /* canopy-teal */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 28 41% 88%;           /* canopy-tan */
+    --secondary-foreground: 330 9% 16%;
+
+    --muted: 28 41% 95%;
+    --muted-foreground: 330 9% 45%;
+
+    --accent: 28 61% 49%;              /* canopy-leather */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 330 9% 90%;
+    --input: 330 9% 90%;
+    --ring: 199 65% 20%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 199 65% 20%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 199 65% 20%;
+    --sidebar-accent: 199 65% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 199 65% 25%;
+    --sidebar-ring: 28 61% 49%;
+  }
+
+  .dark {
+    --background: 330 9% 12%;
+    --foreground: 0 0% 95%;
+
+    --card: 330 9% 16%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 330 9% 16%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 199 65% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 330 9% 20%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 330 9% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 28 61% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 330 9% 25%;
+    --input: 330 9% 25%;
+    --ring: 199 65% 40%;
+    
+    --sidebar-background: 199 65% 15%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 199 65% 15%;
+    --sidebar-accent: 199 65% 20%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 199 65% 20%;
+    --sidebar-ring: 28 61% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+  }
+  
+  h1 {
+    @apply text-4xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl leading-snug;
+  }
+}
