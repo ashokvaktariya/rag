@@ -15,6 +15,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
 
+# Load .env from parent directory (project root)
+env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+load_dotenv(dotenv_path=env_path)
+# Also try loading from current directory and parent directory without path
 load_dotenv()
 
 # Configure logging

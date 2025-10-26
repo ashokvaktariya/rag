@@ -14,7 +14,8 @@ from datetime import datetime
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 
-load_dotenv()
+# Load .env from project root
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
 
 # Configure logging
 logging.basicConfig(
@@ -34,8 +35,8 @@ class JSONToDatabaseMigrator:
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.openai_client = openai.OpenAI(api_key=self.openai_api_key) if self.openai_api_key else None
         
-        # JSON file path
-        self.json_file = "data/consultants.json"
+        # JSON file path (from project root)
+        self.json_file = os.path.join(os.path.dirname(__file__), '..', 'consultants.json')
         
         if not self.postgres_url:
             raise ValueError("POSTGRES_URL not found in environment variables")

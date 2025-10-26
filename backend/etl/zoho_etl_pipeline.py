@@ -21,7 +21,8 @@ from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 import openai
 
-load_dotenv()
+# Load .env from project root
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
 
 # Configure logging
 logging.basicConfig(

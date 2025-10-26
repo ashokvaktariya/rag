@@ -8,7 +8,8 @@ import psycopg2
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+# Load .env from project root (../../.env from this file's location)
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
 
 def create_database_schema():
     """Create PostgreSQL database schema for consultant data"""
